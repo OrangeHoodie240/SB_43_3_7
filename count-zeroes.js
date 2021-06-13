@@ -1,3 +1,5 @@
+const {getMid} = require('./util'); 
+
 function countZeroes(arr) {
     let searching = true; 
     let end = arr.length - 1; 
@@ -65,19 +67,6 @@ function countZeroes(arr) {
     }
     return Math.abs(foundIndex - arr.length);
 }
-
-function getMid(start, end){
-    let d = end - start; 
-    if(d % 2 === 0){
-        return start + (d / 2); 
-    }
-    else{
-        return start + ((d + 1) / 2); 
-    }
-
-}
-
-
 
 
 
