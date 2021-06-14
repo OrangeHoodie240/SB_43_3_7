@@ -1,4 +1,4 @@
-const { getMid } = require('./util');
+const { getMid, getIndWithNum } = require('./util');
 
 function sortedFrequency(arr, num) {
     let end = arr.length - 1;
@@ -104,33 +104,6 @@ function getIndRightOfNum(arr, i, num){
     } 
 }
 
-function getIndWithNum(arr, start, end, num) {
-    if (arr[0] === num) return 0;
-    let i = getMid(start, end);
-    if (arr[i] > num) {
-        end = i;
-    }
-    else {
-        start = i;
-    }
-    i = getMid(start, end);
 
-    while (true) {
-        let initialI = i; 
-        if (arr[i] === num) {
-            return i;
-        }
-        else if (arr[i] < num) {
-            start = i;
-        }
-        else if(arr[i] > num) {
-            end = i;
-        }
-        i = getMid(start, end);
-        if(initialI === i){
-            return -1; 
-        }
-    }
-}
 
-module.exports = sortedFrequency
+module.exports = sortedFrequency;
