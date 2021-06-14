@@ -47,6 +47,7 @@ function getIndWithNum(arr, start, end, num) {
 function getRotatedStartInd(arr, start, end){
     let mid = getMid(start, end);
     while(true){
+        let initialMid = mid; 
         if(arr[start] > arr[mid]){
             if(arr[mid - 1] > arr[mid]){
                 return mid; 
@@ -65,6 +66,9 @@ function getRotatedStartInd(arr, start, end){
         }
 
         mid = getMid(start, end);
+        if(initialMid === mid){
+            return 0; 
+        }
     }
 }
 
